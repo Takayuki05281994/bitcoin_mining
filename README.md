@@ -15,6 +15,7 @@ https://kobayashi.hub.hit-u.ac.jp/topics/hash.html
 このページのプログラムが、わかりやすかったので使用させていただきました。  
 
 Step.1  
+
 	uint32_t Version     = 3;  
 	const char *PrevBlock  = "00000000000000000e8d3266c478c3102a7b54582fb90963aa0bed93747dff0d";  
 	const char *MerkleRoot = "36a37dc0564f1496e74342d96ba7099d987e482891d7954ebe7188f5f5074e0f";  
