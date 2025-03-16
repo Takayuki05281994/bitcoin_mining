@@ -36,7 +36,9 @@ Step.1
 
 Step.2  
 参考にしたプログラムは、正解となったNounce値からハッシュ値を求めているので、ハッシュレートは求められません。  
-Nonceを0からループで回して正解がヒットするように改造しました。  
+Nonceを0からループで回して正解がヒットするように改造しました。
+
+
 	time_t start = time(NULL);  
 	for (uint32_t tryNonce = 0xD0000000U; tryNonce <= 0xFFFFFFFF; tryNonce++)  
 	{  
