@@ -1,0 +1,40 @@
+    // サンプルデータ
+#if 0
+	uint32_t Version     = 3;
+	const char *PrevBlock  = "00000000000000000e8d3266c478c3102a7b54582fb90963aa0bed93747dff0d";
+	const char *MerkleRoot = "36a37dc0564f1496e74342d96ba7099d987e482891d7954ebe7188f5f5074e0f";
+	uint32_t TimeStamp   = 0/*1443323701*/;	/**2015/09/27 03:15:01**/
+	uint32_t Difficulty  =  403867578;
+	uint32_t Nonce       = 1082298256;
+#endif
+
+	uint32_t Version     = 0x20000000;
+	const char *PrevBlock  = "000000000000000000013ac78094ea7584a6d87020d33d12ad10c87752cf188d";
+	const char *MerkleRoot = "93371570b3f7c9bed52a464c4af77b25d57313d91789cab4e5d36f874c3bbceb";
+	uint32_t TimeStamp   = 0/*1443323701*/;	/**2015/09/27 03:15:01**/
+	uint32_t Difficulty  =  387124344;
+	uint32_t Nonce       = 3745729861;
+
+
+	//SHA(Hash, M, 1);
+	//SHA(Hash, Hash, 2);
+
+
+	time_t start = time(NULL);
+	for (uint32_t tryNonce = 0xD0000000U; tryNonce <= 0xFFFFFFFF; tryNonce++)
+	{
+		if ((tryNonce & 0xFFFFFFU) == 0)
+		{
+			printf("Nonce:%x\n", tryNonce);
+		}
+		Set(M, Version, PrevBlock, MerkleRoot, TimeStamp, Difficulty, tryNonce);
+		SHA(Hash, M, 1);
+		SHA(Hash, Hash, 2);
+
+		if (CompHash(Hash, T) < 0)
+		{
+			cout << "BlockHash  : "; Show(Hash, 8);
+			printf("Time       : %lld\n",  (time(NULL) - start));
+			break;
+		}
+	}
