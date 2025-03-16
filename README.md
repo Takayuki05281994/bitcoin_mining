@@ -11,26 +11,26 @@ CPUはAMD Ryzen 7 3700X 8-Core Processorを使用しました。
 
 ## 実行結果・考察など
 
-https://kobayashi.hub.hit-u.ac.jp/topics/hash.html
-このページのプログラムが、わかりやすかったので使用させていただきました。
+https://kobayashi.hub.hit-u.ac.jp/topics/hash.html  
+このページのプログラムが、わかりやすかったので使用させていただきました。  
 
 Step.1
-	uint32_t Version     = 3;
-	const char *PrevBlock  = "00000000000000000e8d3266c478c3102a7b54582fb90963aa0bed93747dff0d";
-	const char *MerkleRoot = "36a37dc0564f1496e74342d96ba7099d987e482891d7954ebe7188f5f5074e0f";
-	uint32_t TimeStamp   = 1443323701;
-	uint32_t Difficulty  =  403867578;
-	uint32_t Nonce       = 1082298256;
+	uint32_t Version     = 3;  
+	const char *PrevBlock  = "00000000000000000e8d3266c478c3102a7b54582fb90963aa0bed93747dff0d";  
+	const char *MerkleRoot = "36a37dc0564f1496e74342d96ba7099d987e482891d7954ebe7188f5f5074e0f";  
+	uint32_t TimeStamp   = 1443323701;  
+	uint32_t Difficulty  =  403867578;  
+	uint32_t Nonce       = 1082298256;  
 
-参考ページのプログラムは上記の履歴データで検証しています。
-まずは、参考にしたプログラムが他の履歴データでも正しく動作するか試してみました。
+参考ページのプログラムは上記の履歴データで検証しています。  
+まずは、参考にしたプログラムが他の履歴データでも正しく動作するか試してみました。  
 
-	uint32_t Version     = 0x20000000;
-	const char *PrevBlock  = "000000000000000000013ac78094ea7584a6d87020d33d12ad10c87752cf188d";
-	const char *MerkleRoot = "93371570b3f7c9bed52a464c4af77b25d57313d91789cab4e5d36f874c3bbceb";
-	uint32_t TimeStamp   = 1443323701;
-	uint32_t Difficulty  =  387124344;
-	uint32_t Nonce       = 3745729861;
+	uint32_t Version     = 0x20000000;  
+	const char *PrevBlock  = "000000000000000000013ac78094ea7584a6d87020d33d12ad10c87752cf188d";  
+	const char *MerkleRoot = "93371570b3f7c9bed52a464c4af77b25d57313d91789cab4e5d36f874c3bbceb";  
+	uint32_t TimeStamp   = 1443323701;  
+	uint32_t Difficulty  =  387124344;  
+	uint32_t Nonce       = 3745729861;  
 
 問題なく動作しました。
 
